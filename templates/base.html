@@ -1,11 +1,21 @@
-<!DOCTYPE html>
-{% load staticfiles %}
+<!DOCTYPE html> {% load staticfiles %}
+<<<<<<< HEAD
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title>Star Social</title>
+    <title>Groupster: a group based social network</title>
     <!-- Latest compiled and minified CSS -->
 
+=======
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Star Social</title>
+>>>>>>> 7a757693f705fe9b3ceb944586f2dc83af5925bd
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Optional theme -->
@@ -16,50 +26,77 @@
 
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<<<<<<< HEAD
 
     <link rel="stylesheet" href="{% static 'simplesocial/css/master.css'%}">
 
 
-  </head>
+</head>
 
 
-  <body>
+<body>
 
     <nav class="navbar  mynav" role="navigation" id="navbar">
-    			<div class="container">
+        <div class="container">
 
-            <a class="navbar-brand mynav" href="{% url 'home' %}">Star Social</a>
+            <a class="navbar-brand mynav" href="{% url 'home' %}">Groupster</a>
 
-    					<ul class="nav navbar-nav navbar-right">
-    						{% if user.is_authenticated %}
-                      <li><a href="{% url 'posts:create' %}" class="btn btn-simple">Post</a></li>
-                      <li><a href="{% url 'groups:all' %}" class="btn btn-simple">Groups</a></li>
-                      <li><a href="{% url 'groups:create' %}" class="btn btn-simple">Create Group</a></li>
-                      <li><a href="{% url 'accounts:logout' %}" class="btn btn-simple">Log out</a></li>
-    						{% else %}
-    						      <li><a href="{% url 'groups:all' %}"class="btn btn-simple">Groups</a></li>
-    						      <li><a href="{% url 'accounts:login' %}" class="btn btn-simple">Log in</a></li>
-    						      <li><a href="{% url 'accounts:signup' %}" class="btn btn-simple">Sign up</a></li>
-    						{% endif %}
-    					</ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'posts:create' %}" class="btn btn-simple">Post</a></li>
+                <li><a href="{% url 'groups:all' %}" class="btn btn-simple">Groups</a></li>
+                <li><a href="{% url 'groups:create' %}" class="btn btn-simple">Create Group</a></li>
+                <li><a href="{% url 'accounts:logout' %}" class="btn btn-simple">Log out</a></li>
+                {% else %}
+                <li><a href="{% url 'groups:all' %}" class="btn btn-simple">Groups</a></li>
+                <li><a href="{% url 'accounts:login' %}" class="btn btn-simple">Log in</a></li>
+                <li><a href="{% url 'accounts:signup' %}" class="btn btn-simple">Sign up</a></li>
+                {% endif %}
+            </ul>
 
 
-
-    			</div>
-    		</nav>
-        <div class="container mycontent">
-          {% block content %}
-
-          {% endblock %}
 
         </div>
+    </nav>
+    <div class="container mycontent">
+        {% block content %} {% endblock %}
+
+    </div>
 
 
 
-<canvas id="canvas"></canvas>
+    <canvas id="canvas"></canvas>
 
 
 
-  </body>
-  <script src="{% static "simplesocial/js/master.js"%}" type="text/javascript" ></script>
+</body>
+<script src="{% static " simplesocial/js/master.js "%}" type="text/javascript"></script>
+=======
+    <link rel="stylesheet" href="{% static 'simplesocial/css/master.css' %}">
+</head>
+
+<body>
+    <nav class="navbar mynav" role="navigation" id="navbar">
+        <div class="container">
+            <a class="navbar-brand mynav" href="{% url 'home' %}">Star Social</a>
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                <li><a href="">Post</a></li>
+                <li><a href="">Groups</a></li>
+                <li><a href="">Create Group</a></li>
+                <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
+                {% else %}
+                <li><a href="#">Groups</a></li>
+                <li><a href="{% url 'accounts:login' %}">Log In</a></li>
+                <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <div class="container mycontent">
+        {% block body_block %} {% endblock %}
+    </div>
+</body>
+>>>>>>> 7a757693f705fe9b3ceb944586f2dc83af5925bd
+
 </html>
